@@ -1,0 +1,103 @@
+@import './variables.scss';
+
+.btn {
+  border-radius: 8px;
+  background: $highlight;
+  color: $dark;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  line-height: 1;
+  align-self: flex-start;
+  letter-spacing: 1px;
+  font-weight: 400;
+  transition: background 0.10s ease-in, color 0.10s ease-in;
+
+  &:hover {
+    text-decoration: none;
+    background: $dark;
+    color: $highlight;
+  }
+}
+
+.button {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  color: #f4f0ff;
+  display: block;
+  padding: 0.2rem 0.7rem;
+  font-weight: 500;
+  position: relative;
+  text-decoration: none;
+  color: $dark;
+
+  &-large {
+    font-size: 1.6rem;
+    padding: 0.3rem 1.3rem;
+    font-weight: 400;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:before,
+  &:after,
+  &-border {
+    border-radius: inherit;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    transition: 0.4s opacity cubic-bezier(0.6, 0.6, 0, 1);
+  }
+
+  &:after {
+    opacity: 0;
+  }
+
+  &:hover:before {
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 1;
+  }
+
+  &-primary {
+    .button-border:before {
+      background: linear-gradient(180deg, rgb(200 255 220 / 60%) 0%, rgb(85 253 145 / 24%) 100%), linear-gradient(0deg, rgb(181 255 207 / 42%), rgba(85, 253, 145, 0.32));
+      border-radius: inherit;
+      content: "";
+      inset: 0;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask-composite: xor;
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      padding: 1px;
+      pointer-events: none;
+      position: absolute;
+    }
+
+    &:before {
+      background: linear-gradient(180deg, rgb(111 255 162 / 5%) 0%, rgb(0 0 0 / 0%) 100%), rgba(85, 253, 145, 0.81);
+      box-shadow: inset 0 0 12px rgba(151, 255, 174, 0.24);
+    }
+
+    &:after {
+      background: linear-gradient(180deg, rgb(111 255 162) 0%, rgb(0 0 0 / 22%) 100%), rgb(85 253 145 / 67%);
+      box-shadow: inset 0 0 12px rgba(151, 255, 174, 0.24);
+    }
+  }
+}

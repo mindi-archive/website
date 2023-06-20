@@ -1,25 +1,68 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
+	<a href="/" class="nav-logo">
+		<img src="/mindi.svg" alt="" width="110">
+	</a>
+
 	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+		<div class="nav-menu">
+			<HeaderLink href="/blog" class="link">Blog</HeaderLink>
+			<HeaderLink href="/about" class="link">About</HeaderLink>
+			<HeaderLink href="https://twitter.com/mindibookmarks" target="_blank" class="link">Twitter</HeaderLink>
+		</div>
 	</nav>
+
+	<div class="nav-actions">
+		<HeaderLink href="https://mindi.ai/login" target="_blank" class="login">Login</HeaderLink>
+		<a href="https://mindi.ai/signup" target="_blank" class="button button-primary">Sign Up <div class="button-border"></div></a>
+	</div>
 </header>
-<style>
+<style lang="scss">
+	@import './../styles/variables.scss';
+
 	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
+		padding: $spacing-8 0;
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+
+		nav {
+			display: flex;
+			gap: 40px;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-menu {
+			display: flex;
+			gap: 20px;
+			background: rgba(255,255,255,.02);
+			border: 1px solid rgba(255,255,255,.08);
+			border-radius: 999px;
+			display: flex;
+			left: 50%;
+			margin: 0 auto;
+			padding: 0.5rem 1.5rem;
+			position: absolute;
+			transform: translate(-50%);
+		}
+
+		.nav-actions {
+			display: flex;
+			gap: 15px;
+		}
+
+		.nav-logo {
+			display: flex;
+			align-items: center;
+
+			img {
+				display: block;
+  			height: auto;
+			}
+		}
 	}
 </style>

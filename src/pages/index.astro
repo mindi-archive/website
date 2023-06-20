@@ -1,50 +1,256 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+
+
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
 	</head>
 	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
+		<div class="container">
+			<Header title={SITE_TITLE} />
+			<article class="article-landing">
+				<h1>Fully automated, AI powered bookmarks.</h1>
+				<p class="intro">Mindi categorizes all your bookmarks for you, so you don’t have to.</p>
+				<a href="https://mindi.ai/signup" class="button button-primary button-large" target="_blank">Get Mindi<div class="button-border"></div></a>
+				<img src="/landing/hero.png" alt="">
+
+				<ul class="flex">
+					<li>
+						<h3><img src="/icons/mouse.svg" alt="">Save with a tap</h3>
+						<p>One click, and it's done.</p>
+					</li>
+					<li>
+						<h3><img src="/icons/tap.svg" alt="">Mindi tags it for you</h3>
+						<p>Manual organizing? So yesterday.</p>
+					</li>
+					<li>
+						<h3><img src="/icons/search.svg" alt="">Instantly find it later</h3>
+						<p>Lost bookmarks? Never again.</p>
+					</li>
+				</ul>
+
+				<h2>Save with just a tap.</h2>
+				<p>Any site, article, video, image, tweet, or text - one tap and you're set. After saving, carry on with your day, as usual.</p>
+				
+				<video class="feature__video" width="100%" autoplay="" loop="" muted="" playsinline="">
+          <source type="video/mp4" src="/landing/click.mp4">
+        </video>
+
+				<h2><img src="/icons/stars.svg" alt="" width="26">Mindi's fun club</h2>
+				<div>
+				<ul class="testimonials">
+					<li>
+						<h3><img src="/testimonials/tim.png" alt="">Tim Bao</h3>
+						<p>The best extension I've ever used! Makes it super easy to save bookmarks, favorite quotes, and images. A real time saver!</p>
+					</li>
+					<li>
+						<h3><img src="/testimonials/dajana.png" alt="">Dajana Inkic</h3>
+						<p>I love this app! The extension is easy to use and easy to reach. Having everything organized and in one place is great.</p>
+					</li>
+				</ul>
+
+				<ul class="testimonials">
+					<li>
+						<h3><img src="/testimonials/sabrina.png" alt="">Sabrina Arcella</h3>
+						<p>
+              Well done! The design and the experience are great! Dead simple to use, solves the problem and just what I needed to get rid of the bookmarks mess.
+            </p>
+					</li>
+					<li>
+						<h3><img src="/testimonials/max.png" alt="">Max Blum</h3>
+						<p>
+              Mindi's auto-generated tag system is fantastic. It makes filtering your bookmarks so easy. My inner UX Designer is thrilled!
+            </p>
+					</li>
+					<li>
+						<h3><img src="/testimonials/sijo.png" alt="">Sijo Vadajeettil</h3>
+						<p>
+              Mindi allows me to let my ideas flow and organize all my resources in one place. It helps me focus on what matters, without wasting time on organizing.
+            </p>
+					</li>
+				</ul>
+			</div>
+
+				<h2>Find things in a flash.</h2>
+				<p>Search, filter, and voilà! Instant results with deep search magic.</p>
+				
+				<video class="feature__video" width="100%" autoplay="" loop="" muted="" playsinline="">
+          <source type="video/mp4" src="/landing/find.mp4">
+        </video>
+
+				<h2>Save images.</h2>
+				<p>Right-click to add browser images to Mindi. Our AI analyzes, recognizes, and tags for you.</p>
+				
+				<video class="feature__video" width="100%" autoplay="" loop="" muted="" playsinline="">
+          <source type="video/mp4" src="/landing/images.mp4">
+        </video>
+
+				<h2>Highlighted text.</h2>
+				<p>Select any text, and Mindi's AI generates meaningful tags for easy finding later.</p>
+				
+				<video class="feature__video" width="100%" autoplay="" loop="" muted="" playsinline="">
+          <source type="video/mp4" src="/landing/highlight.mp4">
+        </video>
+
+				<h2>Share your bookmarks with ease.</h2>
+				<p>Effortlessly send bookmark collections to friends or followers, spreading knowledge and inspiration.</p>
+				
+				<video class="feature__video" width="100%" autoplay="" loop="" muted="" playsinline="">
+          <source type="video/mp4" src="/landing/share.mp4">
+        </video>
+
+				<a href="https://mindi.ai/signup" class="button button-primary button-large" target="_blank">Get Mindi <div class="button-border"></div></a>
+
+				<h2>Privacy and our promise</h2>
+				<ul class="flex">
+					<li>
+						<h3>Totally private.</h3>
+						<p>We value privacy like you do. No selling data to third parties. Mindi's your safe place.</p>
+					</li>
+					<li>
+						<h3>Your data, your business. </h3>
+						<p>We use product interaction data to improve Mindi, but we analyze collectively, not individually.</p>
+					</li>
+					<li>
+						<h3>Ad-free zone.</h3>
+						<p>Our revenue model relies on subscriptions and freemium, not ads.</p>
+					</li>
+				</ul>
+
+				<h2>Safe and secure</h2>
+
+				<p class="small">Mindi's powered by Google Cloud Platform, ensuring top-notch security from our small, independent team.</p>
+				<p class="small">Rest easy with the latest industry standards for data security in transit and at rest.</p>
+				<p class="small">SSL all the way, 100% cloud-based architecture.</p>
+			</article>
+			<Footer />
+		</div>		
 	</body>
 </html>
+
+<style lang="scss">
+	@import './../styles/article.scss';
+	@import './../styles/variables.scss';
+
+	.article-landing {
+		padding-top: 2rem;
+		gap: 2rem;
+		display: flex;
+		flex-direction: column;
+
+		h1 {
+			text-align: center;
+			max-width: 800px;
+			margin: 0 auto;
+			font-size: 5rem;
+			line-height: 1.1;
+		}
+
+		h2 {
+			img {
+				display: inline-block;
+				opacity: 0.5;
+			}
+		}
+
+		.intro {
+			text-align: center;
+			opacity: 0.8;
+			margin: 0 auto;
+			max-width: 400px;
+		}
+
+		a.button {
+			align-self: center;
+		}
+
+		h1, h2, h3 {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-bottom: 0;
+			max-width: 760px;
+
+			&.small {
+				font-size: 1.2rem;
+			}
+		}
+
+		ul {
+			padding-left: 0;
+
+			li {
+				padding-left: 0;
+				list-style-type: none;
+			}
+		}
+
+		img, video {
+			border-radius: 6px;
+		}
+
+		.flex {
+			display: flex;
+			justify-content: space-between;
+			gap: 30px;
+
+			h3, p {
+				font-size: 1.2rem;
+			}
+
+			h3 {
+				margin-bottom: 0.5rem;
+				display: flex;
+				align-items: center;
+
+				img {
+					display: inline-block;
+					margin: 0 10px 0 0;
+				}
+			}
+		}
+
+		.testimonials {
+			display: flex;
+			gap: 11px;
+			margin-bottom: 3px;
+
+			li {
+				background: rgba(255,255,255,0.02);
+    		border: 1px solid rgba(255,255,255,0.08);
+				padding: 20px;
+				border-radius: 6px;
+
+				h3 {
+					display: flex;
+					align-items: center;
+					gap: 10px;
+					margin-top: 0;
+					margin-bottom: 1rem;
+					font-size: 1rem;
+					font-weight: 500;
+
+					img {
+						width: 30px;
+						height: 30px;
+						border-radius: 50%;
+						margin: 0;
+					}
+				}
+
+				p {
+					font-size: 1rem;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+</style>

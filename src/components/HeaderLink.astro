@@ -12,13 +12,39 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 <a href={href} class:list={[className, { active: isActive }]} {...props}>
 	<slot />
 </a>
-<style>
+<style lang="scss">
+	@import './../styles/variables.scss';
+
 	a {
 		display: inline-block;
 		text-decoration: none;
+		color: $light;
+		opacity: 0.8;
+		font-size: 1rem;
+		text-transform: lowercase;
+	}
+	a.link {
+		transition: 0.2s opacity ease-in-out;
+		&:hover {
+			opacity: 0.6;
+		}
 	}
 	a.active {
-		font-weight: bolder;
-		text-decoration: underline;
+		text-decoration: none;
+		color: $highlight;
 	}
+	a.login {
+		color: $light;
+		padding: 0.1rem 0.5rem;
+		color: $light;
+		border-radius: 8px;
+		transition: color 0.1s ease-in-out, background 0.1s ease-in-out ;
+
+		&:hover {
+			text-decoration: none;
+			background: $light;
+			color: $dark;
+		}
+	}
+
 </style>
