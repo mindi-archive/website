@@ -7,14 +7,14 @@ import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
+		<BaseHead title="Mindi product blog" description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
 		<style>
 			ul {
 				list-style-type: none;
@@ -37,13 +37,17 @@ const posts = (await getCollection('blog')).sort(
 		<div class="container">
 			<Header />
 			<main>
+				<h1>Mindi product blog</h1>
 				<section>
 					<ul>
 						{
 							posts.map((post) => (
 								<li>
-									<FormattedDate date={post.data.pubDate} />
-									<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+									<a href={`/blog/${post.slug}/`}>
+										<FormattedDate date={post.data.pubDate} />
+										<h2>{post.data.title}</h2>
+										<p>{post.data.description}</p>
+									</a>
 								</li>
 							))
 						}
@@ -54,3 +58,57 @@ const posts = (await getCollection('blog')).sort(
 		</div>
 	</body>
 </html>
+
+<style lang="scss">
+	@import './../../styles/typography.scss';
+
+	main {
+		h1 {
+			text-align: center;
+		}
+
+		ul {
+			box-sizing: border-box;
+			margin-top: 4rem;
+			min-width: 0px;
+			display: grid;
+			gap: 15px;
+			grid-template-columns: repeat(2, 1fr);
+
+			li {
+				display: flex;
+				flex-direction: column;
+				background: rgba(255,255,255,0.02);
+		    border: 1px solid rgba(255,255,255,0.08);
+				margin: 0;
+				text-align: center;
+				border-radius: 6px;
+				padding: 2rem;
+
+				a {
+					text-decoration: none;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				h2 {
+					font-size: 1.5rem;
+					margin-top: 1.5rem;
+				}
+
+				p {
+					font-size: 1rem;
+					line-height: 1.5;
+					color: $light;
+				}
+				
+				img {
+					display: block;
+					margin: 0 0 2rem 0;
+				}
+			}
+		}
+	}
+</style>

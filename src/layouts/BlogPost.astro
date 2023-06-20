@@ -33,8 +33,6 @@ const { title, description, keywords, pubDate, updatedDate, heroImage } = Astro.
 			<Header />
 			<main>
 				<article>
-					{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-					<h1 class="title">{title}</h1>
 					<FormattedDate date={pubDate} />
 					{
 						updatedDate && (
@@ -43,7 +41,6 @@ const { title, description, keywords, pubDate, updatedDate, heroImage } = Astro.
 							</div>
 						)
 					}
-					<hr />
 					<slot />
 				</article>
 			</main>
@@ -53,5 +50,12 @@ const { title, description, keywords, pubDate, updatedDate, heroImage } = Astro.
 </html>
 
 <style lang="scss">
-	@import './../styles/article.scss';
+	main {
+		padding-top: 4rem;
+
+		article {
+			max-width: 760px;
+			margin: 0 auto;
+		}
+	}
 </style>
