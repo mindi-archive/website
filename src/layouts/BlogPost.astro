@@ -19,7 +19,7 @@ const { title, description, keywords, pubDate, updatedDate, heroImage } = Astro.
 		<div class="container">
 			<Header />
 			<main>
-				<article>
+				<article class="blog-post">
 					<FormattedDate date={pubDate} />
 					{
 						updatedDate && (
@@ -38,7 +38,7 @@ const { title, description, keywords, pubDate, updatedDate, heroImage } = Astro.
 
 <style lang="scss">
 	@import "./../styles/typography.scss";
-	
+
 	main {
 		padding-top: 4rem;
 
