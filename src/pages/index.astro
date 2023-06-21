@@ -150,6 +150,10 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 			margin: 0 auto;
 			font-size: 5rem;
 			line-height: 1.1;
+
+			@media (max-width: 1020px) {
+				font-size: 3rem; 
+			}
 		}
 
 		h2 {
@@ -201,6 +205,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 			justify-content: space-between;
 			gap: 30px;
 
+			@media (max-width: 760px) {
+				flex-direction: column;
+				gap: 0;
+			}
+
 			h3, p {
 				font-size: 1.2rem;
 			}
@@ -221,6 +230,12 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 			display: flex;
 			gap: 11px;
 			margin-bottom: 3px;
+
+			@media (max-width: 760px) {
+				flex-direction: column;
+				gap: 0;
+				margin-bottom: 0;
+			}
 
 			li {
 				background: rgba(255,255,255,0.02);

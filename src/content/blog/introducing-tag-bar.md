@@ -1,7 +1,7 @@
 ---
 title: "Introducing tag bar"
 description: "We've made it easier for you to explore things you save to Mindi. By simply clicking through images, articles, tweets, and websites, you will re-discover important items you've saved to Mindi."
-pubDate: "Jun 14 2023"
+pubDate: "Jun 06 2022"
 heroImage: "/articles/essential-product-updates.png"
 ---
 

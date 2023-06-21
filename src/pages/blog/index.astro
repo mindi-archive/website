@@ -74,6 +74,12 @@ const posts = (await getCollection('blog')).sort(
 			display: grid;
 			gap: 15px;
 			grid-template-columns: repeat(2, 1fr);
+			padding-left: 0;
+
+			@media (max-width: 760px) {
+				grid-template-columns: repeat(1, 1fr);
+				margin-top: 2rem;
+			}
 
 			li {
 				display: flex;
@@ -85,6 +91,10 @@ const posts = (await getCollection('blog')).sort(
 				border-radius: 6px;
 				padding: 2rem;
 				opacity: 1;
+
+				@media (max-width: 760px) {
+					padding: 1rem;
+				}
 
 				a {
 					text-decoration: none;
