@@ -49,6 +49,10 @@ import HeaderLink from './HeaderLink.astro';
 			position: absolute;
 			transform: translate(-50%);
 
+			@media (max-width: 760px) {
+				display: none;
+			}
+
 			a:hover {
 				text-decoration: none;
 			}
