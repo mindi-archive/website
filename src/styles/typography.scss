@@ -31,6 +31,7 @@ h2 {
 
   img {
     margin: 0 5px 0 0;
+    width: auto;
   }
 }
 
@@ -56,7 +57,7 @@ p {
   line-height: 2rem;
   margin-top: 0;
   margin-bottom: 1.5rem;
-  opacity: 0.7;
+  color: $lightText;
 
   .highlight {
     background:rgba(255,255,255,0.06);
@@ -64,6 +65,17 @@ p {
     padding: 0 2px;
     border-radius: 4px;
     color: $light;
+  }
+}
+
+ul {
+  li {
+    color: $lightText;
+    font-size: 1.5rem;
+
+    time[datetime] {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -109,5 +121,21 @@ img, video {
 article {
   a {
     color: $highlight;
+  }
+
+  h3 {
+    img {
+      width: auto;
+    }
+  }
+
+  h2 {
+    img {
+      width: 26px;
+    }
+  }
+
+  img {
+    width: 100%;
   }
 }

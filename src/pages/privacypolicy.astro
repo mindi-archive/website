@@ -2,48 +2,26 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 
-
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
+
+import { getEntry } from 'astro:content';
+
+const privacyPolicy = await getEntry('legal', 'privacypolicy');
+
+const { Content } = await privacyPolicy.render();
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title='About us' description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
+		<BaseHead title='Privacy Policy' description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
 	</head>
 	<body>
 		<div class="container">
 			<Header title={SITE_TITLE} />
 			<article class="article-landing">
-				<h1>Our story</h1>
-				<p class="intro">We are <a href="https://twitter.com/@smeshkov" target="_blank">Sergey</a> and <a href="https://twitter.com/@filipistyping" target="_blank">Filip</a>. We've been working on Mindi since February, 2021.</p>
-				<img src="/about/founders.png" alt="Mindi founders">
-
-				<h2><img src="/about/time.svg" alt="" width="20"> Timeline</h2>
-
-				<ul class="timeline">
-					<li>
-						<time>🚀 February, 2021</time>
-						<p>Filip sought a missing puzzle piece for an idea and discovered Sergey's open-source solution for generating meaningful tags. After an email and follow-up call, we've been collaboratively developing Mindi ever since.</p>
-					</li>
-					<li>
-						<time>🎉 July, 2021</time>
-						<p>Six months later, we launched our alpha product, and by the end of 2021, reached our first 100 users.</p>
-					</li>
-					<li>
-						<time>⭐ June, 2022</time>
-						<p>Mid 2022, we reached our first big milestone, 300 users.</p>
-					</li>
-					<li>
-						<time>💼 April, 2023</time>
-						<p>Filip left his full-time job to work full-time on Mindi.</p>
-					</li>
-					<li>
-						<time>🌟 June, 2023</time>
-						<p>Mindi reaches 1000 users.</p>
-					</li>
-				</ul>
+				<Content />
 			</article>
 			<Footer />
 		</div>		
@@ -189,19 +167,14 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from '../consts';
 				padding-bottom: 2rem;
 				padding-left: 1rem;
 
-				p {
-					color: $light;
-				}
-
 				&::marker {
 					color: $highlight;
 				}
 
 				time {
-					color: $lightText;
+					opacity: 0.7;
 					margin-bottom: 0.3rem;
 					display: block;
-					font-size: 1rem;
 				}
 			}
 		}
