@@ -13,7 +13,7 @@
   font-weight: 400;
   transition: background 0.10s ease-in, color 0.10s ease-in;
 
-  &:hover {
+  &:hover, &:focus {
     text-decoration: none;
     background: $dark;
     color: $highlight;
@@ -38,7 +38,8 @@
     font-weight: 400;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
   }
 
