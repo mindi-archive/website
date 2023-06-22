@@ -8,6 +8,11 @@ export default defineConfig({
 	site: 'https://mindi.ai',
 	integrations: [mdx(), sitemap()],
 	vite: {
+    mode: 'production',
+    build: {
+      minify: 'terser',
+      cssCodeSplit: true,
+    },
     ssr: {
       noExternal: ['open-props'],
     }
