@@ -15,23 +15,6 @@ const posts = (await getCollection('blog')).sort(
 <html lang="en">
 	<head>
 		<BaseHead title="Mindi product blog" description={SITE_DESCRIPTION} keywords={SITE_KEYWORDS} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li :global(time) {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
 	</head>
 	<body>
 		<div class="container">
@@ -112,7 +95,7 @@ const posts = (await getCollection('blog')).sort(
 				p {
 					font-size: 1rem;
 					line-height: 1.5;
-					color: $light;
+					color: $lightText;
 				}
 				
 				img {
