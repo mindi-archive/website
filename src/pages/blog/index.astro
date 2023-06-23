@@ -74,6 +74,11 @@ const posts = (await getCollection('blog')).sort(
 				border-radius: 6px;
 				padding: 2rem;
 				opacity: 1;
+				transition: border-color 0.1s ease-in-out;
+
+				&:hover {
+					border: 1px solid rgba(255,255,255,0.25);
+				}
 
 				@media (max-width: 760px) {
 					padding: 1rem;
