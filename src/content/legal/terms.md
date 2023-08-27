@@ -31,7 +31,9 @@ The Service and its original content, features, and functionality are and will r
 
 When utilizing the feature to share links, bookmarks, or collections publicly, users are required to adhere to the following guidelines:
 
-3.1 Prohibited Content: Users are strictly prohibited from sharing any content that is:
+### 3.1 Prohibited Content 
+
+Users are strictly prohibited from sharing any content that is:
 
 - Pornographic or sexually explicit
 - Depicts or promotes violence, including firearms and weapons
